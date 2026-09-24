@@ -1,13 +1,16 @@
+The latest release is available via [NuGet](https://www.nuget.org/packages/ClickableTransparentOverlayer).
+
 # Clickable Transparent Overlay
-CTO is a library for creating transparent overlay using Win32 API and ImGui.
+Slightly modernized fork of CTO that utilizes ImGUI's multi-viewport feature for its functionality.
+
+The goal of this library is providing a minimal GUI framework for desktop apps with as little bloat and boilerplate as possible.
+
+Currently, only Windows is supported, although it should be easy to implement a portable backend using SDL & OpenGL using the [`IBackend` interface](https://github.com/Saalvage/ClickableTransparentOverlayer/blob/master/ClickableTransparentOverlay/Backends/Backend.cs).
+I have not done this because I don't really expect any interest in this fork and using SDL significantly bloats the resulting executable size (which I am seeking to keep minimal).
 
 # How to Use
 
-Please see the sample projects ([here](https://github.com/zaafar/ClickableTransparentOverlay/tree/master/Examples)) which demonstrate how to use this library.
-
-# Nuget
-
-https://www.nuget.org/packages/ClickableTransparentOverlay
+Please see the sample projects ([here](https://github.com/Saalvage/ClickableTransparentOverlayer/tree/master/Examples)) which demonstrate how to use this library.
 
 # Dependencies
 
@@ -15,20 +18,6 @@ https://www.nuget.org/packages/ClickableTransparentOverlay
 * [Vortice.Windows](https://github.com/amerkoleci/Vortice.Windows)
 * [Hexa.NET.ImGui](https://github.com/HexaEngine/Hexa.NET.ImGui)
 
-# Reference code to watch
-
-Lots of classes in this library (e.g. ImGuiRenderer, ImGuiInputHandler and etc) closely
-follow (if not identical to) the official example in c++ ImGui library
-([here](https://github.com/ocornut/imgui/blob/master/backends/imgui_impl_dx11.cpp "Last changelog looked was 2022-10-11")
-and [here](https://github.com/ocornut/imgui/blob/master/backends/imgui_impl_win32.cpp "Last changelog looked was 2023-10-05")).
-This allows us to easily update this library if something changes over there.
-
 # Feedback
 
 Please open issue in github repo for feedback.
-
-# To Trigger a release push a tag as shown below
-
-git tag -a 8.0.0 -m "version 8.0.0"
-
-git push origin 8.0.0
